@@ -1,7 +1,8 @@
 # nlp
 
 #### 介紹
-nlp大作业
+nlp大作业：复现三篇机器翻译部分的论文
+包括：Learning Deep Transformer Models for Machine Translation
 
 #### 架構
 架構說明
