@@ -1,6 +1,0 @@
-[submodule "fairseq"]
-	path = fairseq
-	url = https://github.com/pytorch/fairseq
-[submodule "back_translation/fairseq"]
-	path = back_translation/fairseq
-	url = https://github.com/pytorch/fairseq
