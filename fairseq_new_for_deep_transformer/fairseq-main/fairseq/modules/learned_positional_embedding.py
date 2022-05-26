@@ -28,6 +28,8 @@ class LearnedPositionalEmbedding(nn.Embedding):
         else:
             self.max_positions = self.num_embeddings
 
+    def max_positions(self):
+        return self.max_positions
     def forward(
         self,
         input: Tensor,

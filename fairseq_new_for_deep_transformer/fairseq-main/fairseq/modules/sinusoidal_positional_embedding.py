@@ -31,7 +31,8 @@ class SinusoidalPositionalEmbedding(nn.Module):
 
     def prepare_for_onnx_export_(self):
         self.onnx_trace = True
-
+    def max_positions(self):
+        return self.max_positions
     @staticmethod
     def get_embedding(
         num_embeddings: int, embedding_dim: int, padding_idx: Optional[int] = None
