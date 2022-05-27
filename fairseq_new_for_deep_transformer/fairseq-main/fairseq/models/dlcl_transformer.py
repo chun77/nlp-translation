@@ -951,26 +951,26 @@ def dlcl_transformer_prenorm_deep_wmt_en_de(args):
     dlcl_transformer_prenorm_wmt_en_de(args)
 
 
-# @register_model_architecture(_MODEL_NAME_, '%s_iwslt_de_en' %_MODEL_NAME_)
-# def dlcl_transformer_iwslt_de_en(args):
-#     args.encoder_embed_dim = getattr(args, 'encoder_embed_dim', 256)
-#     args.encoder_ffn_embed_dim = getattr(args, 'encoder_ffn_embed_dim', 512)
-#     args.encoder_attention_heads = getattr(args, 'encoder_attention_heads', 4)
-#     args.encoder_layers = getattr(args, 'encoder_layers', 3)
-#     args.decoder_embed_dim = getattr(args, 'decoder_embed_dim', 256)
-#     args.decoder_ffn_embed_dim = getattr(args, 'decoder_ffn_embed_dim', 512)
-#     args.decoder_attention_heads = getattr(args, 'decoder_attention_heads', 4)
-#     args.decoder_layers = getattr(args, 'decoder_layers', 3)
-#     base_architecture(args)
+@register_model_architecture(_MODEL_NAME_, '%s_iwslt_de_en' %_MODEL_NAME_)
+def dlcl_transformer_iwslt_de_en(args):
+    args.encoder_embed_dim = getattr(args, 'encoder_embed_dim', 256)
+    args.encoder_ffn_embed_dim = getattr(args, 'encoder_ffn_embed_dim', 512)
+    args.encoder_attention_heads = getattr(args, 'encoder_attention_heads', 4)
+    args.encoder_layers = getattr(args, 'encoder_layers', 3)
+    args.decoder_embed_dim = getattr(args, 'decoder_embed_dim', 256)
+    args.decoder_ffn_embed_dim = getattr(args, 'decoder_ffn_embed_dim', 512)
+    args.decoder_attention_heads = getattr(args, 'decoder_attention_heads', 4)
+    args.decoder_layers = getattr(args, 'decoder_layers', 3)
+    base_architecture(args)
 
 
-# @register_model_architecture(_MODEL_NAME_, '%s_prenorm_iwslt_de_en' %_MODEL_NAME_)
-# def dlcl_transformer_prenorm_iwslt_de_en(args):
-#     args.encoder_normalize_before = True
-#     args.decoder_normalize_before = True
-#     args.attention_dropout = getattr(args, 'attention_dropout', 0.1)
-#     args.relu_dropout = getattr(args, 'relu_dropout', 0.1)
-#     dlcl_transformer_iwslt_de_en(args)
+@register_model_architecture(_MODEL_NAME_, '%s_prenorm_iwslt_de_en' %_MODEL_NAME_)
+def dlcl_transformer_prenorm_iwslt_de_en(args):
+    args.encoder_normalize_before = True
+    args.decoder_normalize_before = True
+    args.attention_dropout = getattr(args, 'attention_dropout', 0.1)
+    args.relu_dropout = getattr(args, 'relu_dropout', 0.1)
+    dlcl_transformer_iwslt_de_en(args)
 
 
 @register_model_architecture("dlcl_transformer", 'dlcl_transformer_toy')
@@ -985,3 +985,7 @@ def dlcl_transformer_toy(args):
     args.decoder_layers = getattr(args, 'decoder_layers', 3)
     base_architecture(args)
 
+@register_model_architecture("dlcl_transformer", 'dlcl_transformer_prenorm_deeper_wmt_en_de')
+def dlcl_transformer_prenorm_deep_wmt_en_de(args):
+    args.encoder_layers = 36
+    dlcl_transformer_prenorm_wmt_en_de(args)
